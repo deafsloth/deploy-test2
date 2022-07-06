@@ -12,7 +12,7 @@ function RestAPI() {
         <button
           onClick={() => {
             axios
-              .post("http://52.78.219.226:8080/api/review/", {
+              .post("http://127.0.0.1:8080/api/review/", {
                 title: "제목",
                 content: "내용",
               })
@@ -29,7 +29,7 @@ function RestAPI() {
         <button
           onClick={() => {
             axios
-              .get("http://52.78.219.226:8080/api/review/")
+              .get("http://127.0.0.1:8080/api/review/")
               .then((response) => {
                 setText([...response.data]);
                 console.log(response.data);
@@ -52,7 +52,7 @@ function RestAPI() {
             <button
               className="btn-delete"
               onClick={() => {
-                axios.delete(`http://52.78.219.226:8080/api/review/${e.id}`);
+                axios.delete(`http://127.0.0.1:8080/api/review/${e.id}`);
                 setText(text.filter((text) => text.id !== e.id));
               }}
             >
